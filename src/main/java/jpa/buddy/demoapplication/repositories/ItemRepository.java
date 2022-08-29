@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
     @Query("select i from Item i " +
-            "where i.order.id = :id " +
+            "where i.itemCategory.id = :id " +
             "order by i.name")
-    List<Item> findByOrder(@Param("id") Long id);
+    List<Item> findByCategory(@Param("id") Long id);
 }

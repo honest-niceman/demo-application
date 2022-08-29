@@ -24,6 +24,18 @@ public class Item {
     @Column(name = "quantity")
     private Long quantity;
 
+    @OneToOne
+    @JoinColumn(name = "item_category_id")
+    private ItemCategory itemCategory;
+
+    public ItemCategory getItemCategory() {
+        return itemCategory;
+    }
+
+    public void setItemCategory(ItemCategory itemCategory) {
+        this.itemCategory = itemCategory;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
